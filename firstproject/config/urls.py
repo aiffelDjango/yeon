@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import Landing.views # Landing 파일의 views를 import
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('landing/', Landing.views.index, name='index')
 ]
+
+# 127.0.0.1:8000/landing => Landing.views.index를 실행시킬 거야
