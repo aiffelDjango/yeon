@@ -19,7 +19,8 @@ import Landing.views # Landing 파일의 views를 import
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('landing/', Landing.views.index, name='index')
+    path('', Landing.views.index, name='index'), # 바로 index.html 실행
+    path('study/', Landing.views.study, name='study'), # Landing 안 views 안 study를 실행시켜줘
 ]
 
 # 127.0.0.1:8000/landing => Landing.views.index를 실행시킬 거야
