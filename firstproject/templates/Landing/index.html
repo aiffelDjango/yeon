@@ -1,55 +1,92 @@
-<!DOCTYPE html> <!--Document type (문서의 타입)-->
+<!DOCTYPE html>
+{% load static %} <!-- settings.py 파일 안에서 static 폴더 위치 고정함-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel = "stylesheet" href = "{% static 'css/main.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+    </style>
+    <title>PortFolio</title>
 </head>
 <body>
-    Hello World!
-    <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-    <h4>h4</h4>
-    <h5>h5</h5>
-    <h6>h6</h6>
 
-    <!-- {% load static %} -->
-    <!-- <img src="{%static 'IU.jpg'%}" alt='iu'> -->
+    <div id="container">
+        <nav >
+            <ul>
+                <li><a href = "#Home"><b>Home</b></a></li>
+                <li><a href = "#About"><b>About</b></a></li>
+                <li><a href = "#Gallery"><b>Gallery</b></a></li>
+                <li><a href = "#Contact"><b>Contact</b></a></li>
+            </ul>
+        </nav>
 
-    <img src='../../static/IU.jpg' alt='iu'>
+        <!-- 첫 번째 페이지 -->
+        <div id="Home" class="listItem">
+            <span class="profile"><img src="{% static 'img/cat.jpeg' %}" width="550px" height="550px" alt=""/></span> 
+            <h3><strong>This Cat is so Cute</strong> <br>You can scroll down if you want to see me more!</h3>
+        </div>
 
-    <span>span 태그1</span>
-    <span>span 태그2</span>
+        <!-- 두 번째 페이지 -->
+        <div id="About" class="listItem">
+            <h1> About </h1>
+            <div>
+               <img class = "profile" src ="{% static 'img/IU.jpg' %}" alt="" width="300px" height="300px">
+                <div class="AboutContents">
+                    <h2>
+                        <strong>Lorem ipsum dolor sit amet <br>Lorem ipsum dolors</strong>
+                    </h2>
+                    <h3 > 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                        Repudiandae a tempora quis soluta, ratione architecto!<br>
+                        Facere, possimus modi ducimus perspiciatis nostrum<br>
+                        dolorum id voluptatum fuga totam sint harum. Quae, nemo!<br>
+                        Repudiandae a tempora quis soluta, ratione architecto!<br>
+                        Facere, possimus modi ducimus perspiciatis nostrum<br>
+                        dolorum id voluptatum fuga totam sint harum. Quae, nemo!<br>
+                    </h3>
+                </div>
+             </div>
+        </div>
+  
+        <!-- 세 번째 페이지 -->
+        <div id="Gallery" class="listItem">
+            <h1> Gallery  </h1>
+            <div>
+                <div class="GalleryItems">
+                    <img class = "grid_item" src="{% static 'img/cat1.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat2.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat3.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat4.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat1.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat2.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat3.jpeg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/cat4.jpeg' %}" alt="">
+                </div>
+            </div>
+        </div>
 
-    <div>안녕하세요</div>
-    <div>두 번째 영역입니다.</div>
-
-    <a href='https://www.google.com' target='_blank'>Google Link</a>
-
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nemo officiis. Ea, laborum. Delectus illo porro iusto velit voluptatibus numquam nesciunt sit rem, doloremque, non harum fugit eligendi assumenda expedita.</p>
-
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-    </ul>
-
-    <ol>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-    </ol>
-
+        <!-- 네 번째 페이지 -->
+        <div id="Contact" class="listItem">
+            <h1> Contact </h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0xJxgvJO2Xo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="ContactLinkWrapper">
+                <a href="https://yeon22.tistory.com/" class="ContactLink">Blog</a>
+                <a href="mailto:jungyune22@gmail.com" class="ContactLink">Gmail</a>
+                <a href="https://github.com/yeon42" class="ContactLink">Github</a>
+            </div>
+            <div>
+                This is my favorite Music.
+            </div>
+        </div>
+        <footer>
+            This site is a learning page through Django.
+        </footer>
+    <div>
 </body>
 </html>
-
 
 
 <!--
