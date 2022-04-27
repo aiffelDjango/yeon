@@ -21,6 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Landing.views.index, name='index'), # 바로 index.html 실행
     path('study/', Landing.views.study, name='study'), # Landing 안 views 안 study를 실행시켜줘
+    path('sticker', Landing.views.sticker, name='sticker'),
+    path('stickerResult', Landing.views.stickerResult, name='stickerResult')
 ]
 
 # 127.0.0.1:8000/landing => Landing.views.index를 실행시킬 거야

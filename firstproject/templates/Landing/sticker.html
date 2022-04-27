@@ -1,0 +1,26 @@
+<!-- input 태그를 통해 이미지를 받게 되는 페이지 
+    post 형식으로 sticekrResult.html로 보냄 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticker AI</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- form action을 통해 이미지가 전송이 되었을때 처리할 내용물이 전달이 되면 페이지 이동-->
+      <form
+        method="POST"
+        action="{% url 'stickerResult' %}"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <input type="file" name="image" /><br />
+        <input type="submit" value="테스트 해보기 " />
+      </form>
+    </div>
+  </body>
+</html>
